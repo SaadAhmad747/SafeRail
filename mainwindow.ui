@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1114</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>RailwayMMI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Nirmala UI Semilight</family>
+    </font>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <family>Nirmala UI Semilight</family>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">        QTabWidget::tab-bar {
+            alignment: center;
+        }</string>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="MainMenu">
+       <property name="font">
+        <font>
+         <family>Nirmala UI Semilight</family>
+        </font>
+       </property>
+       <attribute name="title">
+        <string>Main Menu</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QLabel" name="MainLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Nirmala UI Semilight</family>
+            <pointsize>72</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>SAFERAIL</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+         <widget class="QWidget" name="MainBtnBox" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>1000</width>
+            <height>250</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>1000</width>
+            <height>1000</height>
+           </size>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QPushButton" name="BtnConnect">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>280</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>280</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">     QPushButton {
+         background-color: #5cb85c;
+         color: white;
+         font-weight: bold;
+         border-radius: 8px;
+     }
+     QPushButton:hover {
+         color: black;
+     }</string>
+             </property>
+             <property name="text">
+              <string>Connect</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resources.qrc">
+               <normaloff>:/Icons/connection.png</normaloff>:/Icons/connection.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QPushButton" name="BtnDevmode">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>280</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>280</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">     QPushButton {
+         background-color: #6F42C1;
+         color: white;
+         font-weight: bold;
+         border-radius: 8px;
+     }
+     QPushButton:hover {
+         color: black;
+     }</string>
+             </property>
+             <property name="text">
+              <string>Dev Mode</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resources.qrc">
+               <normaloff>:/Icons/dev.png</normaloff>:/Icons/dev.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="autoRepeat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item alignment="Qt::AlignmentFlag::AlignHCenter">
+            <widget class="QPushButton" name="BtnSettings">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>80</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">     QPushButton {
+         background-color: #0055ff;
+         color: white;
+         font-weight: bold;
+         border-radius: 8px;
+     }
+     QPushButton:hover {
+         color: black;
+     }</string>
+             </property>
+             <property name="text">
+              <string>Settings</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resources.qrc">
+               <normaloff>:/Icons/gear.png</normaloff>:/Icons/gear.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>25</width>
+               <height>25</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="SettingTab">
+       <property name="font">
+        <font>
+         <family>Nirmala UI Semilight</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">        QTabWidget::tab-bar {
+            alignment: left;
+        }</string>
+       </property>
+       <attribute name="title">
+        <string>Settings</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QTabWidget" name="SettingsTabWidget">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>100</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Nirmala UI Semilight</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::FocusPolicy::WheelFocus</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="CameraSetting">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <attribute name="title">
+            <string>Camera</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>11</x>
+              <y>89</y>
+              <width>361</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="CIpLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Camera IP</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="CameraIp">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="CIdLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Camera ID/User</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="CameraId">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="CPassLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Password</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="CameraPass">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::EchoMode::Normal</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>210</y>
+              <width>361</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Jetson</string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_2">
+             <item row="0" column="0">
+              <widget class="QLabel" name="JSIpLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Server IP</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="JetsonIp">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="JSPortLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Port</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="JetsonPort">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>32767</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="RadarSetting">
+           <attribute name="title">
+            <string>Radar</string>
+           </attribute>
+           <widget class="QLabel" name="VelocityLabel">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>260</y>
+              <width>91</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Nirmala UI Semilight</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>Velocity, m/s</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="AngleLabel">
+            <property name="geometry">
+             <rect>
+              <x>60</x>
+              <y>300</y>
+              <width>91</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Nirmala UI Semilight</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>Angle, deg</string>
+            </property>
+           </widget>
+           <widget class="QDoubleSpinBox" name="AngleDS">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>300</y>
+              <width>81</width>
+              <height>29</height>
+             </rect>
+            </property>
+            <property name="maximum">
+             <double>9999.989999999999782</double>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="ProfileCBox">
+            <property name="geometry">
+             <rect>
+              <x>70</x>
+              <y>10</y>
+              <width>101</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>Profile 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Profile 2</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="ProfileLabel">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>63</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Nirmala UI Semilight</family>
+             </font>
+            </property>
+            <property name="text">
+             <string>Profiles:</string>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="RangeGBox">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>50</y>
+              <width>271</width>
+              <height>191</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Range, m</string>
+            </property>
+            <widget class="QLabel" name="MiniLabel">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>30</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Minimum</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="UnamLabel">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>80</y>
+               <width>101</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Unambiguous</string>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="MiniRangeDS">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>30</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <double>9999.989999999999782</double>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="UnamRangeDS">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>80</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="buttonSymbols">
+              <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
+             </property>
+             <property name="maximum">
+              <double>9999.989999999999782</double>
+             </property>
+            </widget>
+            <widget class="QLabel" name="MaxLabel">
+             <property name="geometry">
+              <rect>
+               <x>30</x>
+               <y>130</y>
+               <width>71</width>
+               <height>31</height>
+              </rect>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+              </font>
+             </property>
+             <property name="text">
+              <string>Maximum</string>
+             </property>
+            </widget>
+            <widget class="QDoubleSpinBox" name="MaxRangeDS">
+             <property name="geometry">
+              <rect>
+               <x>140</x>
+               <y>130</y>
+               <width>81</width>
+               <height>29</height>
+              </rect>
+             </property>
+             <property name="maximum">
+              <double>9999.989999999999782</double>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QDoubleSpinBox" name="VelocityDS">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>260</y>
+              <width>81</width>
+              <height>29</height>
+             </rect>
+            </property>
+            <property name="maximum">
+             <double>9999.989999999999782</double>
+            </property>
+           </widget>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="geometry">
+             <rect>
+              <x>320</x>
+              <y>60</y>
+              <width>221</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <property name="title">
+             <string>Radar Server </string>
+            </property>
+            <layout class="QFormLayout" name="formLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="RSIpLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>IP</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="RadarIP">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="RSPortLabel">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="text">
+                <string>Port</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="RadarPort">
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Nirmala UI Semilight</family>
+                </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::FocusPolicy::StrongFocus</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit:hover {
+    border: 2px solid;
+}</string>
+               </property>
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>32767</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="ButtonBox" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>8</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="BtnSave">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>280</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>280</width>
+               <height>90</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+               <strikeout>false</strikeout>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LayoutDirection::LeftToRight</enum>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">     QPushButton {
+         background-color: rgb(99, 99, 99);
+         color: lightgray;
+         font-weight: bold;
+         border-radius: 8px;
+     }
+	QPushButton:enabled{
+	     background-color: #5cb85c;
+         color: white;
+         font-weight: bold;
+         border-radius: 8px;
+}
+     QPushButton:hover {
+         color: black;
+     }</string>
+             </property>
+             <property name="text">
+              <string>Save</string>
+             </property>
+             <property name="icon">
+              <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="BtnBack">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>250</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI Semilight</family>
+               <pointsize>-1</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">     QPushButton {
+         background-color: #0055ff;
+         color: white;
+         font-size: 16px;
+         font-weight: bold;
+         border-radius: 8px;
+     }
+     QPushButton:hover {
+         color: black;
+     }</string>
+             </property>
+             <property name="text">
+              <string>Back</string>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources>
+  <include location="Resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
