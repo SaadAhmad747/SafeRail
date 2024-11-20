@@ -1,0 +1,15 @@
+debug/devmode.o
+debug/main.o
+debug/mainwindow.o
+debug/networkdatareader.o
+debug/radardataprocessor.o
+debug/radarvisual.o
+debug/settingsmanager.o
+debug/stream.o
+debug/streammanager.o
+debug/qrc_Resources.o
+debug/moc_devmode.o
+debug/moc_mainwindow.o
+debug/moc_networkdatareader.o
+debug/moc_radardataprocessor.o
+debug/moc_stream.o

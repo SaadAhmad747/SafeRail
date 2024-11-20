@@ -1,0 +1,15 @@
+release/devmode.o
+release/main.o
+release/mainwindow.o
+release/networkdatareader.o
+release/radardataprocessor.o
+release/radarvisual.o
+release/settingsmanager.o
+release/stream.o
+release/streammanager.o
+release/qrc_Resources.o
+release/moc_devmode.o
+release/moc_mainwindow.o
+release/moc_networkdatareader.o
+release/moc_radardataprocessor.o
+release/moc_stream.o
