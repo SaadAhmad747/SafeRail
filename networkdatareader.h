@@ -16,6 +16,8 @@ public:
 
 signals:
     void dataReady(const QVector<RadarCluster>& clusters);
+    void connectionStatusChanged(const QString &status);
+    void connectionErrorOccurred(const QString &error);
 
 private slots:
     void onReadyRead();

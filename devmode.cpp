@@ -19,6 +19,9 @@ DevMode::DevMode(SettingsManager *settingsManager, QWidget *parent)
     connect(ui->NetworkButton, &QPushButton::clicked, this, &DevMode::onConnectBtnClicked);
     connect(networkDataReader, &NetworkDataReader::dataReady, radarDataProcessor, &RadarDataProcessor::storeData);
     connect(radarDataProcessor, &RadarDataProcessor::clustersProcessed, this, &DevMode::onProcessComplete);
+    connect(networkDataReader, &NetworkDataReader::connectionStatusChanged, this, &DevMode::statusUpdate);
+    connect(networkDataReader, &NetworkDataReader::connectionErrorOccurred, this, &DevMode::statusUpdate);
+
 
     //delete this later
     ui->lZoom->hide();
@@ -29,6 +32,7 @@ DevMode::DevMode(SettingsManager *settingsManager, QWidget *parent)
 
 DevMode::~DevMode()
 {
+    radarDataProcessor->stopProcess();
     delete radarDataProcessor;
     delete networkDataReader;
     delete streamManager;

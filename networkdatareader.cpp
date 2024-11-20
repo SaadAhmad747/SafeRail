@@ -27,12 +27,23 @@ NetworkDataReader::~NetworkDataReader()
 void NetworkDataReader::start()
 {
     socket->connectToHost(RadarIp, RadarPort.toInt());
+    connect(socket, &QTcpSocket::connected, this, [this]() {
+        emit connectionStatusChanged("Connected to Radar");
+    });
+    connect(socket, &QTcpSocket::disconnected, this, [this]() {
+        emit connectionStatusChanged("Disconnected from Radar");
+    });
+    connect(socket, &QTcpSocket::errorOccurred, this, [this](QAbstractSocket::SocketError socketError) {
+        Q_UNUSED(socketError);
+        emit connectionErrorOccurred("Connection Error: " + socket->errorString());
+    });
     connect(socket, &QTcpSocket::readyRead, this, &NetworkDataReader::onReadyRead);
 }
 
 void NetworkDataReader::stop()
 {
     socket->disconnectFromHost();
+    emit connectionStatusChanged("Radar connection stopped");
 }
 
 void NetworkDataReader::onReadyRead()

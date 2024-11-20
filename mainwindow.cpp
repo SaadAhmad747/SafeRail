@@ -4,6 +4,7 @@
 #include "devmode.h"
 #include <QDebug>
 #include <QMessageBox>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -44,6 +45,7 @@ MainWindow::~MainWindow()
 void MainWindow::connectButton()
 {
     Stream *stream = new Stream(&settingsManager, this);
+    connect(stream, &Stream::statusUpdate, this, &MainWindow::updateStatusBar);
     ui->tabWidget->addTab(stream, "Stream");
     ui->tabWidget->setTabVisible(0, false);
     ui->tabWidget->setTabsClosable(true);
@@ -51,6 +53,7 @@ void MainWindow::connectButton()
 
 void MainWindow::devButton(){
     DevMode *devMode = new DevMode(&settingsManager, this);
+    connect(devMode, &DevMode::statusUpdate, this, &MainWindow::updateStatusBar);
     ui->tabWidget->addTab(devMode, "Dev Mode");
     ui->tabWidget->setTabVisible(0, false);
     ui->tabWidget->setTabsClosable(true);
@@ -94,11 +97,25 @@ void MainWindow::onSaveButtonClicked()
 
 void MainWindow::onTabCloseRequested(int index)
 {
+    ui->BtnConnect->setEnabled(false);
+    ui->BtnDevmode->setEnabled(false);
     QWidget *tab = ui->tabWidget->widget(index);
-    ui->tabWidget->removeTab(index);
-    tab->deleteLater(); // Clean up memory
+    if (tab) {
+        // Disconnect signals to prevent crashes
+        disconnect(tab, nullptr, this, nullptr);
+
+        ui->tabWidget->removeTab(index);
+        tab->deleteLater(); // Schedule object deletion
+    }
+
+    // Restore default tab visibility
     ui->tabWidget->setTabVisible(0, true);
     ui->tabWidget->setTabsClosable(false);
+    // Re-enable BtnConnect and BtnDevmode after 3 seconds
+    QTimer::singleShot(3000, this, [this]() {
+        ui->BtnConnect->setEnabled(true);
+        ui->BtnDevmode->setEnabled(true);
+    });
 }
 
 void MainWindow::PopulateSettings()
@@ -111,4 +128,9 @@ void MainWindow::PopulateSettings()
     ui->JetsonPort->setText(settings["JetsonPort"].toString());
     ui->RadarIP->setText(settings["RadarIp"].toString());
     ui->RadarPort->setText(settings["RadarPort"].toString());
+}
+
+void MainWindow::updateStatusBar(const QString &message)
+{
+    ui->statusBar->showMessage(message, 5000); // Message visible for 5 seconds
 }

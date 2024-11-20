@@ -21,6 +21,9 @@ public:
     explicit Stream(SettingsManager *settingsManager, QWidget *parent = nullptr);
     ~Stream();
 
+signals:
+    void statusUpdate(const QString &message);
+
 private slots:
     void onTabChanged(int index);
     void onProcessComplete(const QVector<RadarCluster> &processedClusters);

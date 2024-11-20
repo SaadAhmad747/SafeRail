@@ -75,11 +75,11 @@ GstElement *StreamManager::CreateFusedPipeline()
 
 void StreamManager::SetupAndStartOpticalPipeline(QWidget* videoWidget)
 {
-    // if (pipelineOptical) {
-    //     gst_element_set_state(pipelineOptical, GST_STATE_NULL);
-    //     gst_object_unref(pipelineOptical);
-    //     pipelineOptical = nullptr;
-    // }
+    if (pipelineOptical) {
+        gst_element_set_state(pipelineOptical, GST_STATE_NULL);
+        gst_object_unref(pipelineOptical);
+        pipelineOptical = nullptr;
+    }
 
     pipelineOptical = CreatePipeline("101");  // Use channel 101 for optical
     if (!pipelineOptical) {
@@ -98,11 +98,11 @@ void StreamManager::SetupAndStartOpticalPipeline(QWidget* videoWidget)
 
 void StreamManager::SetupAndStartThermalPipeline(QWidget *videoWidget)
 {
-    // if (pipelineThermal) {
-    //     gst_element_set_state(pipelineThermal, GST_STATE_NULL);
-    //     gst_object_unref(pipelineThermal);
-    //     pipelineThermal = nullptr;
-    // }
+    if (pipelineThermal) {
+        gst_element_set_state(pipelineThermal, GST_STATE_NULL);
+        gst_object_unref(pipelineThermal);
+        pipelineThermal = nullptr;
+    }
 
     pipelineThermal = CreatePipeline("201");  // Use channel 201 for thermal
     if (!pipelineThermal) {
@@ -121,11 +121,11 @@ void StreamManager::SetupAndStartThermalPipeline(QWidget *videoWidget)
 
 void StreamManager::SetupAndStartFusedPipeline(QWidget *videoWidget)
 {
-    // if(pipelineFused){
-    //     gst_element_set_state(pipelineFused, GST_STATE_NULL);
-    //     gst_object_unref(pipelineFused);
-    //     pipelineFused = nullptr;
-    // }
+    if(pipelineFused){
+        gst_element_set_state(pipelineFused, GST_STATE_NULL);
+        gst_object_unref(pipelineFused);
+        pipelineFused = nullptr;
+    }
 
     pipelineFused = CreateFusedPipeline();
     if(!pipelineFused){

@@ -21,6 +21,9 @@ public:
     ~DevMode();
     void updateCheckBoxes();
 
+signals:
+    void statusUpdate(const QString &message);
+
 private slots:
     void onConnectBtnClicked();
     void onProcessComplete(const QVector<RadarCluster> &processedClusters);

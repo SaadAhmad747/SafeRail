@@ -13,17 +13,17 @@ void RadarDataProcessor::processRadarData()
 {
     inProcess = true;
     QtConcurrent::run([=]()
-                      {
-                          while (inProcess) {
-                              if (!clustersFromSource.isEmpty()) {
-                                  QVector<RadarCluster> processedClusters = filterClusters(clustersFromSource);
+  {
+      while (inProcess) {
+          if (!clustersFromSource.isEmpty()) {
+              QVector<RadarCluster> processedClusters = filterClusters(clustersFromSource);
 
-                                  emit clustersProcessed(processedClusters); // Emit batch of clusters
-                                  clustersFromSource.clear(); // Clear processed data
-                              }
-                              QThread::msleep(100); // Small delay to prevent high CPU usage
-                          }
-                      });
+              emit clustersProcessed(processedClusters); // Emit batch of clusters
+              clustersFromSource.clear(); // Clear processed data
+          }
+          QThread::msleep(100); // Small delay to prevent high CPU usage
+      }
+  });
 }
 
 

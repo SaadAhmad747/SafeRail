@@ -24,12 +24,15 @@ Stream::Stream(SettingsManager* settingsManager, QWidget *parent)
     connect(ui->RadarBtn, &QPushButton::clicked, this, &Stream::onRadarBtnClicked);
     connect(networkDataReader, &NetworkDataReader::dataReady, radarDataProcessor, &RadarDataProcessor::storeData);
     connect(radarDataProcessor, &RadarDataProcessor::clustersProcessed, this, &Stream::onProcessComplete);
+    connect(networkDataReader, &NetworkDataReader::connectionStatusChanged, this, &Stream::statusUpdate);
+    connect(networkDataReader, &NetworkDataReader::connectionErrorOccurred, this, &Stream::statusUpdate);
 
     onTabChanged(0); //set Fused Tab as Default
 }
 
 Stream::~Stream()
 {
+    radarDataProcessor->stopProcess();
     delete radarDataProcessor;
     delete networkDataReader;
     delete streamManager;
